@@ -1,0 +1,28 @@
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+  <div id="app">
+    <h1>Primeiro App</h1>
+    <!-- {{nome}} propriedade do Vue-->
+    <p>Bem vindo {{nome}} </p>
+    <p> {{ bemVindo() }} </p>
+  </div>
+  
+  <script>
+    // Estanciando o Vue
+    new Vue({
+      el: '#app', // Interpretação do elemento App
+      data() {
+        return {
+          nome: 'Sujeito Matheus',
+          idade: 25
+        }
+      },
+      methods: {
+        bemVindo() {
+          return 'Bem Vindo ' + this.nome;
+        }
+      } 
+    })
+  </script>
+

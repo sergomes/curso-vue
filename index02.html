@@ -1,0 +1,31 @@
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+  <div id="app">
+    <h1>Primeiro App</h1>
+    <p>Usuário: {{nome}}</p>
+    <button @click="entrar(250)">Entrar</button>
+    <!-- {{nome}} propriedade do Vue-->
+   
+  </div>
+  
+  <script>
+    // Estanciando o Vue
+    new Vue({
+      el: '#app', // Interpretação do elemento App
+      data() {
+        return {
+          nome: 'Matheus',
+          
+          
+        }
+      },
+      methods: {
+        entrar(numero) {
+          this.nome = numero;
+        }
+      }
+      
+    })
+  </script>
+

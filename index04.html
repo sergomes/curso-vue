@@ -1,0 +1,33 @@
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+  <div id="app">
+    <h1>Contador</h1>
+    <button @click="diminuir(10)">-</button>
+    <span>{{numero}}</span>
+    <button @click="somar(10)">+</button>
+  </div>
+  
+  <script>
+    // Estanciando  Vue
+    new Vue({
+      el: '#app', // Interpretação do elemento App
+      data() {
+        return {
+          numero: 0
+        }
+      },
+      methods: {
+        somar(valorParametro) {
+          this.numero += valorParametro;
+        },
+        diminuir(valorParametro) {
+          this.numero -= valorParametro;
+        }
+      }
+
+      
+     
+    })
+  </script>
+
