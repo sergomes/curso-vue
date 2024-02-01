@@ -1,0 +1,40 @@
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+  <div id="app">
+    <h1>{{nome}}</h1>
+    <p>Nome grande: {{ resultadoNome }} </p>
+    <button @click="somar">Somar #</button>
+    
+   
+  </div>
+  
+  <script>
+    // Estanciando  Vue
+    new Vue({
+      el: '#app', // Interpretação do elemento App
+      data() {
+        return {
+          nome: 'Matheus'
+        }
+      },
+      methods: {
+        somar() {
+          this.nome += '#';
+        },
+        resultadoNome() {
+          return this.nome.length >= 10 ? 'Mais que 10 Letras!' : 'Menor que 10 Letras';
+        }
+      },
+      computed: {
+        resultadoNome() {
+          console.log('Chamou resultado');
+          return this.nome.length >= 10 ? 'Mais que 10 Letras!' : 'Menor que 10 Letras';
+        }
+      }
+      
+      
+     
+    })
+  </script>
+

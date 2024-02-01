@@ -1,0 +1,24 @@
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+  <div id="app">
+    <h1>{{nome}}</h1>
+    <input v-model="nome" />
+   
+  </div>
+  
+  <script>
+    // Estanciando  Vue
+    new Vue({
+      el: '#app', // Interpretação do elemento App
+      data() {
+        return {
+          nome: 'Matheus'
+        }
+      },
+      
+      
+     
+    })
+  </script>
+
