@@ -4,7 +4,7 @@
   <div id="app">
     <h1>{{nome}}</h1>
     <p>Nome grande: {{ resultadoNome }} </p>
-    <button @click="somar">Somar #</button>
+    <button @click="numero++">Somar Numero</button>
     
    
   </div>
@@ -15,7 +15,8 @@
       el: '#app', // Interpretação do elemento App
       data() {
         return {
-          nome: 'Matheus'
+          nome: 'Matheus',
+          numero: 10,
         }
       },
       methods: {
@@ -26,10 +27,10 @@
           return this.nome.length >= 10 ? 'Mais que 10 Letras!' : 'Menor que 10 Letras';
         }
       },
-      computed: {
-        resultadoNome() {
-          console.log('Chamou resultado');
-          return this.nome.length >= 10 ? 'Mais que 10 Letras!' : 'Menor que 10 Letras';
+      watch: {
+        nome(novo, antigo) {
+          console.log('NOVO VALOR: ' + novo);
+          console.log('NOVO ANTIGO: ' + antigo);
         }
       }
       
