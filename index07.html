@@ -1,53 +1,23 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
   
-  <div id="app">
-    <button class="box" @click="mudaBox" v-bind:class="{ativo: btnSatus}"></button>
-    <button v-on:click="mudaBox">Ativar botão</button>
-   
-  </div>
-  
+<div id="app">
+  <h1 v-if="auth">Bem vindo: {{usuario}}</h1>
+  <p v-else>Voçê esta logado como visitante</p>
+  <button v-on:click="auth = !auth">
+    {{auth ? 'Deslogar' : 'Entrar'}}
+  </button>
+
   <script>
-    // Estanciando  Vue
-    new Vue({
-      el: '#app', // Interpretação do elemento App
+    new Vue ({
+      el: '#app',
       data() {
         return {
-          btnSatus: false,
-
+          usuario: 'Sujeito Programador',
+          auth: false,
         }
       },
-      methods: {
-        mudaBox() {
-          this.btnSatus = !this.btnSatus;
-          console.log(this.btnSatus)
-        },
-        
-      },
-      
-      
-      
-     
     })
   </script>
-
-  <style>
-    #app {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .box {
-      background-color: red;
-      width: 200px;
-      height: 200px;
-      border: 0;
-      outline: none;
-
-    }
-    .ativo {
-      background-color: green;
-      border-radius: 50%;
-    }
-  </style>
+</div>
 
